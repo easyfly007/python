@@ -1,0 +1,27 @@
+<html>
+<head>
+	<title> book recommendation </title>
+</head>
+<body>
+	<p> You like book </p>
+	<form action='recommend_book' method='POST'>
+		{% csrf_token %}
+		<select name='book_id'>
+			{% for book in book_list %}
+				<option value="{{book.id}}"> {{book}}</option>
+			{% endfor %}
+		</select>
+		<input type='submit' value='continue' />
+	</form>
+
+	{% if recommends %}
+		<p> we recommend below books to you because they are from the same publisher </p>
+		<ul>
+			{% for recommend in recommends %}
+				<li> {{recommend}}</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+
+</body>
+</html>

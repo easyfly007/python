@@ -1,0 +1,14 @@
+<html>
+<head>
+</head>
+<body>
+	{% if error %}
+	<p styple = 'color: red;'> please enter search item</p>
+	{% endif %}
+	<form action = "/search/" method='GET'>
+		search: <input type='text' name='q' />
+		<br>
+		<input type='submit' value='search'>
+	</form>
+</body>
+</html>

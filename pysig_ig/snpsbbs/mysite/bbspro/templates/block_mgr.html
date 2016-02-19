@@ -1,0 +1,47 @@
+{% extends 'index.html' %}
+ <div class="container">
+ 
+{% block page-content %}
+<div class="jumbotron">
+
+<p> 删除选中帖子 </p>
+<br>
+
+<div class="jumbotron">
+
+{% for tiezi in tiezi_list reversed%}
+	<a href = "/detail/{{tiezi.id}}/" > {{ tiezi.title }} <br> </a> 
+	{{ tiezi.author }} 
+	{{tiezi.created_date|date:"Y-m-d H:i:s" }}
+	<hr>
+{% endfor %}
+</div>
+
+<p> 小黑屋管理 <p>
+<div class="jumbotron">
+
+
+
+
+<!-- <form action='/block_mgr/' method='POST'>
+	<select multiple='multiple' id='id_block' name='blocks'>
+		{% for block in block_list %}
+			<option value='{{block.id}}'> {{ block.user.username }} </option>
+		{% endfor %}
+	</select>
+</form>
+ -->
+
+<form action ='/block_mgr/' name='selectedblock' method='POST' >
+	{% for block in block_list %}
+		<input type="checkbox" name="selectedblock" value="blocked_{{block.id}}" /> {{block.user.username }}
+		<br />
+	{% endfor %}
+<input type="submit" value="放出小黑屋" /> 
+</form> 
+
+
+
+</div>
+
+{% endblock %}

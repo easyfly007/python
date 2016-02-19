@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+ <div class="container">
+ 
+{% block page-content %}
+<div class="jumbotron">
+
+{% for category in category_list %}
+			<a style="font-size:15px;" align="left" href = "/category_detail/{{category.id}}/" > {{ category.name }}</a>
+			<br>
+			<span style="font-size:15px;" align = "center" >{{ category.administrator }}</span>
+			<span style = "font-size:15px;" align = "right">{{category.created_date|date:"Y-m-d H:i:s" }}</span>
+			<hr>
+{% endfor %}
+
+</div>
+{% endblock %}
+</div>

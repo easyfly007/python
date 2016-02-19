@@ -1,0 +1,66 @@
+{% extends 'index.html' %}
+ <div class="container">
+ 
+{% block page-content %}
+<div class="jumbotron">
+
+<p> 删除选中帖子 </p>
+<br>
+
+<div class="jumbotron">
+
+<form action ='/tiezi_mgr/{{cat_id}}/' name='selectedtiezi' method='POST' >
+	{% for tiezi in tiezi_list %}
+		<input type="checkbox" name="selectedtiezi" value="{{tiezi.id}}" /> 
+			<a href = "/detail/{{tiezi.id}}/" > {{ tiezi.title }} <br> </a> 
+			{{ tiezi.author }} 
+			{{tiezi.created_date|date:"Y-m-d H:i:s" }}
+		<br /></br>
+	{% endfor %}
+</br> <input type="submit" value="删除 帖子(不可恢复)" /> 
+</form> 
+
+</div>
+
+<!-- {% for tiezi in tiezi_list reversed%}
+	<a href = "/detail/{{tiezi.id}}/" > {{ tiezi.title }} <br> </a> 
+	{{ tiezi.author }} 
+	{{tiezi.created_date|date:"Y-m-d H:i:s" }}
+	<hr>
+{% endfor %}
+</div>
+ -->
+<hr>
+
+<p> 小黑屋管理 <p>
+<div class="jumbotron">
+
+
+
+<form action ='/block_mgr/{{cat_id}}/' name='selectedblocked' method='POST' >
+	{% for block in block_list %}
+		<input type="checkbox" name="selectedblocked" value="{{block.id}}" /> {{block.user.username }}
+		<br />
+	{% endfor %}
+</br> <input type="submit" value="放出小黑屋" /> 
+</form> 
+
+
+<hr>
+</br>
+<p>选择或者输入用户名（多个用户名之间用空格分开）</p>
+<form action ='/free_mgr/{{cat_id}}/' name='selectedfreeman' method='POST'>
+	<input type='text' name='inputfreeman' >
+	</br>
+	{% for freeman in freeman_list %}
+		<input type="checkbox" name="selectedfreeman" value="{{freeman.id}}" /> {{freeman.user.username }}
+		<br />
+	{% endfor %}
+</br> <input type="submit" value="关进小黑屋" /> 
+</form> 
+
+
+
+</div>
+
+{% endblock %}

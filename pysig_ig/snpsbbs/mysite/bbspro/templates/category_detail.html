@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+ 
+{% block page-content %}
+
+<form action = '/tiezi_pub/' method = 'POST'>
+	<input type = 'hidden' name='category_id' value="{{category.id}}" />	
+	<span>{{category.name}} | </span> <button  class ='btn btn-primary'  type = "submit">发表文章</button>
+	<!--<span>{{category.name}} | </span> <a>发表文章</a>-->
+</form>
+
+<span> 版主：{{administrator}}	| </span>
+{% if isadministrator %}
+	<a style="font-size:15px;" align="left" href = "/category_mgr/{{category.id}}/" > 版面管理 </a>
+{% endif %}
+
+
+<br>
+<div class="jumbotron">
+
+	{% for tiezi in tiezi_list reversed%}
+			<a href = "/detail/{{tiezi.id}}/" > {{ tiezi.title }}
+			<br>
+			</a> 
+			{{ tiezi.author }} 
+			{{tiezi.created_date|date:"Y-m-d H:i:s" }}
+			<hr>
+	{% endfor %}
+
+</div>
+{% endblock %}
