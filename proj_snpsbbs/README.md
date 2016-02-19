@@ -2,11 +2,7 @@
 www.snpsbbs.sinaapp.com
 
 
-### 如何使用
-> * 点击页面download zip 下载并解压到你的自己的目录
-> * 确保你在自己的电脑上安装了django，没有的话安装一个
-> * 进入第一层mysite目录，运行python manager.py runserver
-> * 访问 http://localhost:8000， 开始访问论坛
+
 
 
 ------
