@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+{% load comments %}
+{% block page-content %}
+<div class = "contents">
+	<h2> {{tiezi_obj.title}} </h2>
+	{{tiezi_obj.author}} created at {{tiezi_obj.created_date|date:"Y-m-d H:i:s"}}
+		<hr>
+	<h4> {{tiezi_obj.content|safe}} </h4>
+	<br>
+</div>	
+<hr>
+{% render_comment_list for tiezi_obj %}
+{% if user.is_authenticated%}
+<form action = '/submit_comment/' method = 'POST'>
+	<textarea cols=80 rows=5 name='comment_content' placeholder='Input your comment...' > </textarea>
+	<input type = 'hidden' name='tiezi_id' value="{{tiezi_obj.id}}" />
+	<br>
+	<button class ='btn btn-primary' type = "submit">submit</button>
+</form>
+{% else %}
+<p>Please <a href='/login/' >Login</a> to comment!</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,36 @@
+<html>
+<head>
+	<title> request list </title>
+</head>
+
+<body>
+	<h1> request list </h1>
+	<p>
+		request.path: 
+		{{path}}<br>
+	</p>
+	<p>
+		request.get_host(): {{host}}
+	</p>
+	<p>
+		request.get_full_path(): {{full_path}}
+	</p>
+	<p>
+		request.is_secure: {{is_secure}}
+	</p>
+	<h1> meta direct for request.Meta</h1>
+	<table>
+		<tr>
+			<th> key </th>
+			<th> value</th>
+		</tr>
+
+		{% for key in metas %}
+		<tr>
+			<td> {{key }}</td>
+			<td> {{val}}</td>
+		</tr>
+		{% endfor %}
+	</table>
+</body>
+</html>

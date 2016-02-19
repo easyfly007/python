@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+{% block page-content %}
+<div>
+<title>Register Page</title>
+<form method="POST" action = '/register_create/'>
+	<p>Username: <input type = 'text' name = 'username' /></p>
+	<br>
+	<p>Password: <input type = 'password' name ='password1' /></p>
+	<br>
+	<p>Password Again: <input type = 'password' name ='password2' /></p>
+	<br>
+	<input type ='submit' value='submit' />
+	<span style = 'color: red' >{{errors}} </span>
+</form>
+</div>
+{% endblock %}

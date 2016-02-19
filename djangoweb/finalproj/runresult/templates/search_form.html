@@ -1,0 +1,55 @@
+<html>
+<title>
+	Simulation benchmarch system page!
+</title>
+<body>
+	{% if errors %}
+		<p> input error, please enter the correct information: </p>
+		<ul>
+			{% for error in errors %}
+				<li style='color:#FF0000' > {{error}} </li>
+			{% endfor %}
+		</ul>
+	{% else %}
+		<h2> Welcome to the simulator benchmark system</h2>
+		<h2> input below infomration to show result </h2>
+	{% endif %}
+	<hr>
+	<form action='showresult' method='POST'> {% csrf_token %}
+		<ul>
+			<li>
+				target simulator: 
+				<select name='target_simulator'>
+					<option value='HSP' selected='selected'> HSPICE </option>
+					<!-- <option value='HPP'>HSPICE-HPP </option> -->
+					<option value='FSM' > FineSim </option>
+					<!-- <option value='CSM'> CustomSim</option> -->
+				</select>
+			</li><br>
+			<li>
+				golden simulator: 
+				<select name='golden_simulator'>
+					<option value='HSP' > HSPICE </option>
+					<!-- <option value='HPP'>HSPICE-HPP </option> -->
+					<option value='FSM' selected='selected'> FineSim </option>
+					<!-- <option value='CSM'> CustomSim</option> -->
+				</select>
+			</li></br>
+			<li>
+				case list:</br>
+				<select name='caselist'>
+					<option value='rd'> rd.list </option>
+					<!-- <option value='hpp'>hpp.list </option> -->
+					<!-- <option value='va'> veriloga.list </option>
+					<option value='rf'> rf.list</option> -->
+				</select>
+			</li></br>
+			<li>
+				binary date (yyyymmdd):</br>
+				<input type='text' name='rundate' value='20150520'>
+			</li></br>
+		</ul>
+		<input type='submit' name='submit' value='submit'>
+	</form>	
+</body>
+<html>

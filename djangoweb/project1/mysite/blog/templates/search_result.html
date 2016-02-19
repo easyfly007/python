@@ -1,0 +1,15 @@
+<html>
+<head>
+	<title> search result </title>
+</head>
+
+<body>
+	<p> You searched for  {{q}}:</p>
+	<p> results are:</p>
+	<ol>
+		{% for book in books %}
+		<li> {{book.title }}</li>
+		{% endfor %}
+	</ol>
+	</body>
+</html>

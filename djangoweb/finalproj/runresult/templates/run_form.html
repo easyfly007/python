@@ -1,0 +1,72 @@
+<html>
+<title>
+	User defined regression config!
+</title>
+<body>
+	{% if errors %}
+		<p> please enter the correct information:</p>
+		<ul>
+			{% for error in errors %}
+				<li style='color:#FF0000' > {{error}} </li>
+			{% endfor %}
+		</ul>
+	{% else %}
+		<h2> Welcome to the simulate regresson page!</p>
+		<h2> Select the range you to run regression!</h2>
+	{% endif %}
+	<hr>
+	<form action='runregression' method='POST'> {% csrf_token %}
+		<ol>
+			<li>
+				target simulator 
+				<select name='target_simulator'>
+					<option value='HSP'> HSPICE </option>
+					<option value='FSM'> FineSim </option> 
+				</select>
+			</li>
+			<li>
+				golden simulator
+				<select name='golden_simulator'>
+					<option value='HSP'> HSPICE </option>
+					<option value='FSM'> FineSim </option>
+				</select> 
+			</li> </br>
+
+			<li> 
+				select target simulator binary: 
+				<select name='target_binary_select'>
+					<option value='default'> default daily </option>
+					<option value='manual'>  manually input </option>	
+				</select>
+			</li>
+			<li> 
+				select golden simulator binary: 
+				<select name='golden_binary_select'>
+					<option value='default'> default daily </option>
+					<option value='manual'>  manually input </option>	
+				</select>
+			</li></br></br>
+			<li>
+				manually input target binary (leave it blank if you select target binary as 'default daily' binary): </br>
+				<input type='text' name='target_binary_input' value={{target_binary_input}} >
+			</li></br>
+			<li>
+				manually input golden binary (leave it blank if you select golden binary as 'default daily' binary): </br>
+				<input type='text' name='golden_binary_input' value={{golden_binary_input}} >
+			</li></br>	
+
+			<li>
+				binary date (yyyymmdd format): 
+				<input type='text' name='rundate' />
+			</li></br>
+			<li>
+				select the case list:
+				<select name='caselist'>
+					<option value='rd'> rd.list </option>
+				</select>
+			</li></br>
+		</ol>
+		<input type='submit' name='submit' value='submit'>
+	</form>	
+</body>
+<html>

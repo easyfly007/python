@@ -1,0 +1,51 @@
+<html>
+<head>
+	<title> Simulation benchmarch system page! </title>
+</head>
+<body>
+	<h2> You are comparing for:</h2>
+	<hr/>
+	<table >
+		<tr>
+			<td> case list:</td>
+			<td> {{caselist}}.list</td>
+		</tr>
+		<tr>
+			<td> target simulator:</td>
+			<td> {{target_simulator}}</td>
+		</tr>
+		<tr>
+			<td> golden simulator:</td>
+			<td> {{golden_simulator}}</td>
+		</tr>
+		<tr>
+			<td> binary date:</td>
+			<td> {{rundate}}</td>
+		</tr>
+	</table>
+	
+	<hr>
+	<p>  summary charts:</p></br>
+	</br>
+	{% for pic in pics %}
+		<img src={{pic}} width="600" alt='image not found' /> 
+	{% endfor %}
+	
+	<hr>
+	<p> summary table:</p>
+	<p> transient accuracy difference for {{title}}</p>
+	<table border="1">
+		<tr>
+			<th>case</th>
+			<th>difference </th>
+		</tr>
+		{% for datum in data %}
+			<tr>
+				<td>{{datum.case }}</td>
+				<td>{{datum.value}}</td>
+			</tr>
+		{% endfor %}
+	</table>
+
+</body>
+</html>
