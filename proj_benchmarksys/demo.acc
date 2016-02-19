@@ -1,0 +1,38 @@
+                                            REPORT : ACCURACY
+                 Case Name	                                 Worst Signal	            Max%	          TYPE	  PATH
+                 ---------	                                 ------------	            ----	          ----	  ----
+c1/c2/c3/c4/x1#2.sw0	lv9(m2)	100.000	DC Analysis	path1/path2/c1/c2/c3/c4/p3/x1/pa9/t0
+c1/c2/c3/c4/x1#3.sw0	lv9(m2)	100.000	DC Analysis	path1/path2/c1/c2/c3/c4/p3/x1/pa9/t0
+c1/c2/c3/c4/y3.ac0	xi4.xi4.v(n8)	57.611	AC Analysis	path1/path2/c1/c2/c3/c4/p3/y3/pb166/t0
+c1/c2/c3/c4/p4.sw0	v(b)	100.000	DC Analysis	path1/path2/c1/c2/c3/c4/p3/p4/pf42/t0
+c1/c2/c3/c4/p4#1.sw0	v(b)	100.000	DC Analysis	path1/path2/c1/c2/c3/c4/p3/p4/pf42/t0
+c1/c2/c3/c4/p4#2.sw0	v(b)	100.000	DC Analysis	path1/path2/c1/c2/c3/c4/p3/p4/pf42/t0
+c1/c2/c3/c4/p4#3.sw0	v(b)	100.000	DC Analysis	path1/path2/c1/c2/c3/c4/p3/p4/pf42/t0
+c1/c2/c3/c4/p4.sw0	v(b)	100.000	DC Analysis	path1/path2/c1/c2/c3/c4/p3/p4/p51318/t0
+c1/c2/c3/c4/p4#1.sw0	v(b)	100.000	DC Analysis	path1/path2/c1/c2/c3/c4/p3/p4/p51318/t0
+c1/c2/c3/c4/p4#2.sw0	v(b)	100.000	DC Analysis	path1/path2/c1/c2/c3/c4/p3/p4/p51318/t0
+c1/c2/c3/c4/p4#3.sw0	v(b)	100.000	DC Analysis	path1/path2/c1/c2/c3/c4/p3/p4/p51318/t0
+c1/c2/ml/mp/tt_mn.tr0	v(n_0_0)#mnTE_CARLO=4	0.735	Tran Analysis	path1/path2/c1/c2/ml/mp/p3/tt_mn/p0/t0
+c1/c21/c3/c41/p4.sw0	v(b)	100.000	DC Analysis	path1/path2/c1/c21/c3/c41/p3/p4/p54/t0
+c1/c21/c3/c41/p4#1.sw0	v(b)	100.000	DC Analysis	path1/path2/c1/c21/c3/c41/p3/p4/p54/t0
+c1/c21/c3/c41/p4#2.sw0	v(b)	100.000	DC Analysis	path1/path2/c1/c21/c3/c41/p3/p4/p54/t0
+c1/c21/c3/c41/p4#3.sw0	v(b)	100.000	DC Analysis	path1/path2/c1/c21/c3/c41/p3/p4/p54/t0
+c1/c2/c3/c4/x1#2.sw0	lv9(m2)	100.000	DC Analysis	path1/path2/c1/c2/c3/c4/p3/x1/p1/t0
+c1/c2/c3/c4/x1#3.sw0	lv9(m2)	100.000	DC Analysis	path1/path2/c1/c2/c3/c4/p3/x1/p1/t0
+c1/c2/c3/c4/p4.sw0	v(b)	100.000	DC Analysis	path1/path2/c1/c2/c3/c4/p3/p4/p67/t0
+c1/c2/c3/c4/p4#1.sw0	v(b)	100.000	DC Analysis	path1/path2/c1/c2/c3/c4/p3/p4/p67/t0
+c1/c2/c3/c4/p4#2.sw0	v(b)	100.000	DC Analysis	path1/path2/c1/c2/c3/c4/p3/p4/p67/t0
+c1/c2/c3/c4/p4#3.sw0	v(b)	100.000	DC Analysis	path1/path2/c1/c2/c3/c4/p3/p4/p67/t0
+c1/c2/c3/c41/p4.sw0	v(b)	100.000	DC Analysis	path1/path2/c1/c2/c3/c41/p3/p4/p32/t0
+c1/c2/c3/c41/p4#1.sw0	v(b)	100.000	DC Analysis	path1/path2/c1/c2/c3/c41/p3/p4/p32/t0
+c1/c2/c3/c41/p4#2.sw0	v(b)	100.000	DC Analysis	path1/path2/c1/c2/c3/c41/p3/p4/p32/t0
+c1/c2/c3/c41/p4#3.sw0	v(b)	100.000	DC Analysis	path1/path2/c1/c2/c3/c41/p3/p4/p32/t0
+c1/c2/c3/c42/t1#5.ac0	i(q1)	100.000	AC Analysis	path1/path2/c1/c2/c3/c42/p3/t1/p24/t0
+c1/c2/c3/c42/t1#6.ac0	i(q1)	100.000	AC Analysis	path1/path2/c1/c2/c3/c42/p3/t1/p24/t0
+c1/c2/c3/c42/t1#7.ac0	i(q1)	100.000	AC Analysis	path1/path2/c1/c2/c3/c42/p3/t1/p24/t0
+c1/c2/c3/c42/p4.sw0	v(b)	100.000	DC Analysis	path1/path2/c1/c2/c3/c42/p3/p4/p49/t0
+c1/c2/c3/c42/p4#1.sw0	v(b)	100.000	DC Analysis	path1/path2/c1/c2/c3/c42/p3/p4/p49/t0
+c1/c2/c3/c42/p4#2.sw0	v(b)	100.000	DC Analysis	path1/path2/c1/c2/c3/c42/p3/p4/p49/t0
+c1/c2/c3/c42/p4#3.sw0	v(b)	100.000	DC Analysis	path1/path2/c1/c2/c3/c42/p3/p4/p49/t0
+c1/c2/c3/bp/19/c1/uu.ac0	xm1.lv9(m1)	1.934	AC Analysis	path1/path2/c1/c2/c3/bp/19/c1/p3/uu/pgj/t0
+End accuracy report

@@ -1,0 +1,33 @@
+{% extends 'index.html' %}
+{% load comments %}
+
+{% block page-content %}
+<a href = /category_detail/{{tiezi_obj.category.id}}>{{tiezi_obj.category}}</a>
+<div class="jumbotron">
+<div class = "contents">
+	<h2> {{tiezi_obj.title}} </h2>
+	{{tiezi_obj.author}} created at {{tiezi_obj.created_date|date:"Y-m-d H:i:s"}}
+	{% ifequal user.id tiezi_obj.author.user_id %}
+	<a href="#">Edit</a>     <a href="#">Delete</a>
+	{% endifequal %}
+	<hr>
+	<h4> {{tiezi_obj.content|safe}} </h4>
+	<br>
+</div>	
+
+
+<hr>
+
+{% render_comment_list for tiezi_obj %}
+{% if user.is_authenticated%}
+<form action = '/submit_comment/' method = 'POST'>
+	<textarea cols=80 rows=5 name='comment_content' placeholder='Input your comment...' > </textarea>
+	<input type = 'hidden' name='tiezi_id' value="{{tiezi_obj.id}}" />
+	<br>
+	<button class ='btn btn-primary' type = "submit">submit</button>
+</form>
+{% else %}
+<p>Please <a href='/login/' >Login</a> to comment!</p>
+{% endif %}
+</div>
+{% endblock %}
