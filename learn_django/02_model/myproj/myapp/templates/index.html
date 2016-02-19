@@ -1,0 +1,118 @@
+<html>
+<head>
+	<title> index </title>
+</head>
+
+<body>
+	<h3> practice Django model for SQL handling </h3>
+	<hr />
+	<p > {{warning}}</p>
+	<hr />
+	<p> 1. <strong> Create</strong> a new customer </p>
+	<form action = 'insert' method='POST'> 
+		{% csrf_token %}
+		<table>
+			<tr>
+				<td> name </td>
+				<td> <input type = 'text' name = 'new_name'></td>
+			</tr>
+			<tr>
+				<td> city </td>
+				<td> <input type = 'text' name = 'new_city'></td>
+			</tr>
+			<tr>
+				<td> address </td>
+				<td> <input type = 'text' name = 'new_address'></td>
+			</tr>
+			<tr>
+				<td> <input type = 'submit' value = 'insert'></td>
+			</tr>
+		</table>
+	</form>
+
+
+
+	<hr />
+	<p> 2. <strong> Read</strong> exist customers </p>
+	<table border = '1'>
+		<tr>
+			<th> cust id </th>
+			<th> cust name </th>
+			<th> cust city </th>
+			<th> cust address </th>
+		</tr>
+		{% for cust in cust_list %}
+		<tr>
+			<td> {{cust.id }}</td>
+			<td> {{cust.name}}</td>
+			<td> {{cust.city}}</td>
+			<td> {{cust.address}}</td>
+		</tr>
+		{% endfor %}
+	</table>
+	
+
+
+	<br />
+	<hr />
+	<p> 3. <strong> Update</strong> an exist customer </p>
+	<form action = 'update' method='POST'> 
+		{% csrf_token %}
+
+		<table>
+			<tr>
+				<td> customer to update: </td>
+				<td>
+					<select id='upd_id' name='upd_id'>
+						{% for cust in cust_list %}
+						<option value="{{cust.id}}" name='upd_id'> {{cust.id}}:{{cust.name}} </option>
+						{% endfor %}
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td> name </td>
+				<td> <input type = 'text' name = 'upd_name'></td>
+			</tr>
+			<tr>
+				<td> city </td>
+				<td> <input type = 'text' name = 'upd_city'></td>
+			</tr>
+			<tr>
+				<td> address </td>
+				<td> <input type = 'text' name = 'upd_address'></td>
+			</tr>
+			<tr>
+				<td> <input type = 'submit' value = 'update'></td>
+			</tr>
+		</table>
+	</form>
+
+
+
+	<br />
+	<hr />
+	<p> 4. <strong> Delete</strong> an exist customer </p>
+	<form action = 'delete' method='POST'> 
+		{% csrf_token %}
+		<table>
+			<tr>
+				<td> customer to delete: </td>
+				<td>
+					<select id='del_id' name='del_id'>
+						{% for cust in cust_list %}
+						<option value="{{cust.id}}" name='upd_id'> {{cust.id}}:{{cust.name}} </option>
+						{% endfor %}
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td> <input type = 'submit' value = 'delete'></td>
+			</tr>
+		</table>
+	</form>
+
+</body>
+
+
+</html>
